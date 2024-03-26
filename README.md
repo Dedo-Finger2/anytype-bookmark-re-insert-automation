@@ -28,7 +28,10 @@ nos seuss bookmarks, deixando eles mais corretos: com título do vídeo e o íco
 2. Faça o pareamento entre o Web Clipper e o AnyType antes de rodar o script;
 3. Certifique-se que a extensão está fixada no navegador;
 4. Instale as dependências necessárias;
-5. Não mova seu mouse nem seu teclado até ver o alerta na sua sua tela.
+5. Não mova seu mouse nem seu teclado até ver o alerta na sua sua tela;
+6. Após rodar o script você vai ter 5 segundos para voltar para o AnyType;
+7. Deixe o AnyType em tela cheia;
+8. Certifique-se de que o nome do seu Set de bookmarks se chama "Bookmarks".
 
 ### Dependências
 
