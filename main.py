@@ -23,6 +23,8 @@ pyauto.write("Bookmarks")
 pyauto.press("down")
 pyauto.press("enter")
 
+sleep(3)
+
 # 3. Procurar por um bookmark que tenha o nome Untitled;
 untitled_bookmarks = pyauto.locateAllOnScreen(BOOKMARK_TARGET_EXAMPLE_IMAGE)
 
@@ -35,10 +37,10 @@ for untitled_bookmark in untitled_bookmarks:
     # 5. Copiar a URL do bookmark;
     pyauto.click(928, 310)
     copy_link_button = pyauto.locateCenterOnScreen(BOOKMARK_URL_COPY_LINK_BUTTON_IMAGE)
-    pyauto.click(copy_link_button)
+    pyauto.click(copy_link_button, interval=0.2)
 
     # 6. Deletar o bookmark;
-    pyauto.click(1394, 109)
+    pyauto.click(1394, 109, interval=0.2)
 
     untitled_bookmark_delete = pyauto.locateCenterOnScreen(BOOKMARK_DELETE_BUTTON)
     pyauto.click(untitled_bookmark_delete)
@@ -62,15 +64,19 @@ for untitled_bookmark in untitled_bookmarks:
 
     # 10. Remover indicador de notificações do nome do Web Clipper;
 
+    sleep(1)
+
     pyauto.hotkey("ctrl", "a")
     pyauto.hotkey("ctrl", "c")
 
     bookmark_old_title = clip.paste()
 
-    if bookmark_old_title.endswith("YouTube"):
-        bookmark_new_title = bookmark_old_title.split(") ")[1] or bookmark_old_title.split(") ")[0]
+    if bookmark_old_title.startswith("("):
+        bookmark_new_title = bookmark_old_title.split(") ")[1]
 
-        pyauto.write(bookmark_new_title)
+        clip.copy(bookmark_new_title)
+
+        pyauto.hotkey("ctrl", "v")
 
     # 11. Clicar em salvar;
     save_button = pyauto.locateCenterOnScreen(SAVE_BUTTON)
