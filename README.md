@@ -35,11 +35,12 @@ nos seuss bookmarks, deixando eles mais corretos: com título do vídeo e o íco
 
 ### Dependências
 
-- pyautogui;
-    ```bash
-    pip install pyautogui
-    ```
-- pyperclip;
-    ```bash
-    pip install pyperclip
-    ```
+```bash
+pip install -r requirements.txt
+```
+
+- Se quiser um executável do projeto basta usar este comando:
+```bash
+pyinstaller --onefile main.py
+```
+- Após usar você pode deletar: ``build/`` & ``main.spec``. Em seguida, execute o que está dentro de ``dist/``.
